@@ -8,36 +8,29 @@ export const removePresentationIndex = selectedPresentationIndex => ({
 });
 
 export function uploadPresentation(newPresentation) {
-  console.log('pres Action: uploading pres:', newPresentation);
-  fetch('/presenter_presentation', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      newPresentation
+  return dispatch => {
+    fetch('/presenter_presentation', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        newPresentation
+      })
     })
-  })
-  .then(res => res.json())
-  .then((json) => {
-    console.log('Hopefully resolved promise:', json);
-    // update the presentation and slide ID fields of the state
-// TODO: update local state
-// presentation.push(newPresentation.map((slide, index) => {
-//  slide.id = res...
-// }));
-    // select that presentation
-    // TODO: RETURN the data!
-    // return {
-    //   type: ActionType.AddPresentation,
-    //   presentations
-    // };
-  })
-  .catch((error) => {
-    console.error('@@@@@ Error in uploadPresentation:', error);
-  });
+    .then(res => res.json())
+    .then((json) => {
+      dispatch(receivePresentation(json))
+    })
+    .catch((error) => {
+      console.error('@@@@@ Error in uploadPresentation:', error);
+    });
+  }
+}
 
+export function receivePresentation(presentation) {
   return {
-    type: ActionType.UploadPresentation
+    type: ActionType.ReceivePresentation,
+    presentation
   }
 }

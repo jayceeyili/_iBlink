@@ -24,8 +24,10 @@ const presentations = (state = [], action) => {
       );
     case ActionType.UploadPresentation:
       return state;
+    case ActionType.ReceivePresentation:
+      return [...state, action.presentation];
     default:
-      return state
+      return state;
   }
 }
 

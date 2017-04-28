@@ -1,5 +1,7 @@
+import thunkMiddleware from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { uploadPresentation } from '../actions/presentationActions';
 
 import rootReducer from '../reducers';
 import {
@@ -15,23 +17,15 @@ const configureStore = (preloadedState) => {
   	rootReducer,
   	preloadedState,
   	composeWithDevTools(applyMiddleware(
+      thunkMiddleware,
       broadcastMiddleware,
       redirectMiddleware,
       createRoomMiddleware,
       matrixMiddleware
     ))
-);
+  );
+
   return store;
 };
-
-/* const configureStore = (preloadedState) => {
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-  const store = createStore(
-  	rootReducer,
-  	preloadedState,
-  	composeEnhancers(applyMiddleware(broadcastMiddleware, redirectMiddleware)));
-
-  return store;
-};*/
 
 export default configureStore;

@@ -5,6 +5,7 @@ const actionType = {
   AddPresentation: 'ADD_PRESENTATION',
   RemovePresentation: 'REMOVE_PRESENTATION',
   SelectPresentationIndex: 'SELECT_PRESENTATION_INDEX',
+  ReceivePresentation: 'RECEIVE_PRESENTATION',
 
   // Matrix
   ReceiveMatrixData: 'RECEIVE_MATRIX_DATA',

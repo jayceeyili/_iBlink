@@ -54,7 +54,7 @@ class Upload extends React.Component {
         if (error) {
       	  console.error('Error in upload:', error);
         } else {
-          console.log('Image upload successful! Result:', result);
+          // console.log('Image upload successful! Result:', result);
           // update the state to add this presentation to the user's set
           // send the presentation to the server
           const newSlides = result.map((slide) => {
@@ -65,10 +65,10 @@ class Upload extends React.Component {
             newSlide.thumbnail_url = slide.thumbnail_url;
             // newSlide.url = slide.url;
             // newSlide.width = slide.width;
-            console.log('mapping to:', newSlide);
+            // console.log('mapping to:', newSlide);
             return newSlide;
           });
-          console.log('newSlides is:', newSlides);
+          // console.log('newSlides is:', newSlides);
           newPresentation.slides = newSlides;
           this.props.uploadPresentation(newPresentation);
 
