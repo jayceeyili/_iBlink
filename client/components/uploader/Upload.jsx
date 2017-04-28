@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Icon } from 'semantic-ui-react';
+import { Route, Redirect } from 'react-router';
 import style from './style.css';
 
 class Upload extends React.Component {

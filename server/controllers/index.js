@@ -154,7 +154,7 @@ module.exports = {
         } else {
           // res.status(201);
           console.log('In server ctlr, sending updated pres:', result);
-          res.status(201).end(JSON.stringify(result));  // return the whole presentation with IDs
+          res.status(201).send(JSON.stringify(result));  // return the whole presentation with IDs
         }
       });
     }
