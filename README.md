@@ -1,4 +1,4 @@
-# iBlink
+# Cool Slides
 
 A web app that allows presenters to share their live presentations in real time with their audience.
 Attendees see the slides on their cell phones and can bookmark, annotate and download slides in real time.
