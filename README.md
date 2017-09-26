@@ -4,12 +4,6 @@ A web app that allows presenters to share their live presentations in real time 
 Attendees see the slides on their cell phones and can bookmark, annotate and download slides in real time.
 Presenters get metrics to improve their presentations and can connect with attendees based on shared areas of interest.
 
-## Team
-
-  - J.G Demathieu
-  - Johnny Chen
-  - Yi Li
-  - Allen Guan
 
 ## Table of Contents
 
