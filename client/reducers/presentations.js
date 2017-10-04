@@ -7,13 +7,11 @@ const presentation = (state, action) => {
       if (state.id !== action.id) {
         return state
       }
-      return {
-        null
-      }
+      return null;
     case ActionType.SelectPresentationIndex:
-      return action.selectedPresentationIndex
+      return action.selectedPresentationIndex;
     default:
-      return state
+      return state;
   }
 }
 
